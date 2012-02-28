@@ -21,3 +21,4 @@ t/module_versions.t
 t/perlcritic.t
 t/pod.t
 t/pod-coverage.t
+META.json
