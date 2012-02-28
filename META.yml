@@ -1,0 +1,31 @@
+---
+abstract: 'Parse a Carp stack trace into an array of caller information with parsed arguments.'
+author:
+  - 'Guillaume Aubert <aubertg@cpan.org>'
+  - 'Kate Kirby <kate@cpan.org>'
+build_requires:
+  Carp: 0
+  Data::Dump: 0
+  Test::Deep: 0
+  Test::Exception: 0
+  Test::More: 0
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3603'
+license: artistic
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Carp-Parse
+provides:
+  Carp::Parse:
+    file: lib/Carp/Parse.pm
+    version: v1.0.0
+  Carp::Parse::CallerInformation:
+    file: lib/Carp/Parse/CallerInformation.pm
+    version: v1.0.0
+requires:
+  perl: 5.006
+resources:
+  license: http://opensource.org/licenses/artistic-license.php
+version: v1.0.0
