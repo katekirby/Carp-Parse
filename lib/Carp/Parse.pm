@@ -103,35 +103,66 @@ sub parse_stack_trace
 		my @arguments = ();
 		my $parse_arguments = $subroutine_arguments;
 		my $arguments_count = 0;
-		while ( defined( $parse_arguments ) && $parse_arguments ne '' && $arguments_count < $MAX_ARGUMENTS_PER_CALL )
+		my $incorrect_arguments_format_detected = 0;
+		while (
+			defined( $parse_arguments )
+			&& ( $parse_arguments ne '' )
+			&& ( $arguments_count < $MAX_ARGUMENTS_PER_CALL )
+			&& !$incorrect_arguments_format_detected
+		)
 		{
 			my ( $value );
-			if ( substr( $parse_arguments, 0, 1 ) eq "'" )
+			# Note: we need to account for both single and double quotes here
+			# as Carp has changed its internals over time and the quoting style
+			# depends on the version of Carp.
+			my $first_character = substr( $parse_arguments, 0, 1 );
+			if ( $first_character eq '"' || $first_character eq "'" )
 			{
 				# If it starts with a quote, we use a negative lookbehind to find the
-				# closing quote, which should be a quote not preceded by a backslash
+				# matching closing quote, which should be a quote not preceded by a backslash
 				# (which would indicate an escaped quote that's part of the data).
-				( $value ) = $parse_arguments =~ /^'(.*?)(?<!\\)'/;
-				$parse_arguments =~ s/\Q'$value'\E//;
+				( $value ) = $parse_arguments =~ /^$first_character(.*?)(?<!\\)$first_character/;
+				if ( defined( $value ) )
+				{
+					$parse_arguments =~ s/\Q$first_character$value$first_character\E//;
+				}
+				else
+				{
+					$incorrect_arguments_format_detected = 1;
+				}
 			}
 			else
 			{
 				# If it doesn't start with a quote, we just take all the following
 				# characters as long as they're not commas.
 				( $value ) = $parse_arguments =~ /^([^,]*)/;
-				$parse_arguments =~ s/\Q$value\E//;
+				if ( defined( $value ) )
+				{
+					$parse_arguments =~ s/\Q$value\E//;
+				}
+				else
+				{
+					$incorrect_arguments_format_detected = 1;
+				}
 			}
 			
-			push( @arguments, $value );
+			if ( !$incorrect_arguments_format_detected )
+			{
+				push( @arguments, $value );
+				
+				# Remove the comma that followed the argument (if it's not the last one).
+				$parse_arguments =~ s/^\s*,\s*//;
 			
-			# Remove the comma that followed the argument (if it's not the last one).
-			$parse_arguments =~ s/^\s*,\s*//;
-			
-			# Make sure we never get into an infinite loop, in case the format of the
-			# stacktrace is somehow broken.
-			$arguments_count++;
-			carp "Max limit of arguments per call reached, showing the first $MAX_ARGUMENTS_PER_CALL only."
-				if $arguments_count == $MAX_ARGUMENTS_PER_CALL
+				# Make sure we never get into an infinite loop, in case the format of the
+				# stacktrace is somehow broken.
+				$arguments_count++;
+				carp "Max limit of arguments per call reached, showing the first $MAX_ARGUMENTS_PER_CALL only."
+					if $arguments_count == $MAX_ARGUMENTS_PER_CALL;
+			}
+			else
+			{
+				@arguments = ( '[incorrect arguments format]' );
+			}
 		}
 		
 		push(
