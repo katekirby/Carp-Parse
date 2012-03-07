@@ -30,6 +30,19 @@ my $builder = Module::Build->new(
 	],
 	create_makefile_pl   => 'traditional',
 	recursive_test_files => 1,
+	configure_requires   =>
+	{
+		'Module::Build'   => 0,
+	},
+	meta_merge           =>
+	{
+		resources         =>
+		{
+			repository => 'https://sourceforge.net/p/perlcarpparse/code',
+			homepage   => 'https://metacpan.org/release/Carp-Parse',
+			bugtracker => 'http://rt.cpan.org/NoAuth/ReportBug.html?Queue=carp-parse',
+		},
+	},
 );
 
 $builder->create_build_script();

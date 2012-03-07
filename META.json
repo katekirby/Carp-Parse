@@ -5,7 +5,7 @@
       "Kate Kirby <kate@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4, CPAN::Meta::Converter version 2.112150",
+   "generated_by" : "Module::Build version 0.4, CPAN::Meta::Converter version 2.120530",
    "license" : [
       "artistic_1"
    ],
@@ -17,16 +17,16 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Carp" : 0,
-            "Data::Dump" : 0,
-            "Test::Deep" : 0,
-            "Test::Exception" : 0,
-            "Test::More" : 0
+            "Carp" : "0",
+            "Data::Dump" : "0",
+            "Test::Deep" : "0",
+            "Test::Exception" : "0",
+            "Test::More" : "0"
          }
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.4"
+            "Module::Build" : "0"
          }
       },
       "runtime" : {
@@ -47,9 +47,16 @@
    },
    "release_status" : "stable",
    "resources" : {
+      "bugtracker" : {
+         "web" : "http://rt.cpan.org/NoAuth/ReportBug.html?Queue=carp-parse"
+      },
+      "homepage" : "https://metacpan.org/release/Carp-Parse",
       "license" : [
          "http://opensource.org/licenses/artistic-license.php"
-      ]
+      ],
+      "repository" : {
+         "url" : "https://sourceforge.net/p/perlcarpparse/code"
+      }
    },
    "version" : "v1.0.1"
 }
