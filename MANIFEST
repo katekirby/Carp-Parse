@@ -10,7 +10,9 @@ MANIFEST.SKIP
 META.yml
 README
 t/00-load.t
-t/10-parse_stack_trace.t
+t/10-parse_stack_trace-single_quotes.t
+t/11-parse_stack_trace-double_quotes.t
+t/12-parse_stack_trace-incorrect_args.t
 t/CallerInformation/00-load.t
 t/CallerInformation/10-new.t
 t/CallerInformation/20-get_line.t
