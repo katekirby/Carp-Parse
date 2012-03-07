@@ -21,11 +21,11 @@ the stack trace (for example, to redact sensitive information).
 
 =head1 VERSION
 
-Version 1.0.1
+Version 1.0.2
 
 =cut
 
-our $VERSION = '1.0.1';
+our $VERSION = '1.0.2';
 
 our $MAX_ARGUMENTS_PER_CALL = 1000;
 

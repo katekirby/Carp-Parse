@@ -21,10 +21,10 @@ name: Carp-Parse
 provides:
   Carp::Parse:
     file: lib/Carp/Parse.pm
-    version: v1.0.1
+    version: v1.0.2
   Carp::Parse::CallerInformation:
     file: lib/Carp/Parse/CallerInformation.pm
-    version: v1.0.1
+    version: v1.0.2
 requires:
   perl: 5.006
 resources:
@@ -32,4 +32,4 @@ resources:
   homepage: https://metacpan.org/release/Carp-Parse
   license: http://opensource.org/licenses/artistic-license.php
   repository: https://sourceforge.net/p/perlcarpparse/code
-version: v1.0.1
+version: v1.0.2

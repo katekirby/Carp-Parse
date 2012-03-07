@@ -38,11 +38,11 @@
    "provides" : {
       "Carp::Parse" : {
          "file" : "lib/Carp/Parse.pm",
-         "version" : "v1.0.1"
+         "version" : "v1.0.2"
       },
       "Carp::Parse::CallerInformation" : {
          "file" : "lib/Carp/Parse/CallerInformation.pm",
-         "version" : "v1.0.1"
+         "version" : "v1.0.2"
       }
    },
    "release_status" : "stable",
@@ -58,5 +58,5 @@
          "url" : "https://sourceforge.net/p/perlcarpparse/code"
       }
    },
-   "version" : "v1.0.1"
+   "version" : "v1.0.2"
 }
