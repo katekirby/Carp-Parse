@@ -5,7 +5,7 @@ use Module::Build;
 
 my $builder = Module::Build->new(
 	module_name          => 'Carp::Parse',
-	license              => 'artistic',
+	license              => 'GPL_3',
 	dist_author          =>
 	[
 		'Guillaume Aubert <aubertg@cpan.org>',
@@ -38,7 +38,7 @@ my $builder = Module::Build->new(
 	{
 		resources         =>
 		{
-			repository => 'https://sourceforge.net/p/perlcarpparse/code',
+			repository => 'https://github.com/katekirby/Carp-Parse.git',
 			homepage   => 'https://metacpan.org/release/Carp-Parse',
 			bugtracker => 'http://rt.cpan.org/NoAuth/ReportBug.html?Queue=carp-parse',
 		},
