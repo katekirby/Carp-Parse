@@ -1,5 +1,9 @@
 Revision history for Carp-Parse
 
+1.0.3   09/26/2012
+        Moved code to github.
+		Changed license to GPL_3.
+
 1.0.2   03/07/2012
         Fixed quote parsing for older versions of Carp.
         Added better handling of misquoted argument strings.
