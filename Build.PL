@@ -14,14 +14,15 @@ my $builder = Module::Build->new(
 	dist_version_from    => 'lib/Carp/Parse.pm',
 	build_requires       =>
 	{
-		'Carp'            => 0,
-		'Data::Dump'      => 0,
+		'File::Spec'      => 0,
 		'Test::Deep'      => 0,
 		'Test::Exception' => 0,
 		'Test::More'      => 0,
 	},
 	requires             =>
 	{
+		'Carp'            => 0,
+		'Data::Dump'      => 0,
 		'perl'            => 5.006,
 	},
 	add_to_cleanup       =>
