@@ -1,4 +1,7 @@
 Revision history for Carp-Parse
+1.0.4   10/10/2012
+        Fixed dependency list.
+		Cleanup of build issues when moving to github.
 
 1.0.3   09/26/2012
         Moved code to github.

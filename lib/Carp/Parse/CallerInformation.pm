@@ -14,11 +14,11 @@ Carp::Parse::CallerInformation - Represent the parsed caller information for a l
 
 =head1 VERSION
 
-Version 1.0.3
+Version 1.0.4
 
 =cut
 
-our $VERSION = '1.0.3';
+our $VERSION = '1.0.4';
 
 
 =head1 SYNOPSIS
