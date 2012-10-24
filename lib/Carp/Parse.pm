@@ -21,11 +21,11 @@ the stack trace (for example, to redact sensitive information).
 
 =head1 VERSION
 
-Version 1.0.4
+Version 1.0.5
 
 =cut
 
-our $VERSION = '1.0.4';
+our $VERSION = '1.0.5';
 
 our $MAX_ARGUMENTS_PER_CALL = 1000;
 
@@ -77,7 +77,9 @@ sub parse_stack_trace
 	# The first part of the stack trace holds the message logged, which may
 	# include newlines so we need to parse it separately.
 	my ( $first_caller ) = $stack_trace =~ /^(.*?at.*?line\s*\d*\n)/sx;
-	$stack_trace =~ s/\Q$first_caller\E//;
+	$stack_trace =~ s/\Q$first_caller\E//
+		if defined $first_caller;
+
 	push(
 		@$parsed_stack_trace,
 		Carp::Parse::CallerInformation->new(

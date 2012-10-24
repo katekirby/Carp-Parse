@@ -1,4 +1,8 @@
 Revision history for Carp-Parse
+
+1.0.5   10/24/2012
+        Fixed an uninitialized value error when the line number is not available.
+
 1.0.4   10/10/2012
         Fixed dependency list.
 		Cleanup of build issues when moving to github.
