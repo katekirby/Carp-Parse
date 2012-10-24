@@ -21,11 +21,11 @@ the stack trace (for example, to redact sensitive information).
 
 =head1 VERSION
 
-Version 1.0.5
+Version 1.0.6
 
 =cut
 
-our $VERSION = '1.0.5';
+our $VERSION = '1.0.6';
 
 our $MAX_ARGUMENTS_PER_CALL = 1000;
 
@@ -77,8 +77,8 @@ sub parse_stack_trace
 	# The first part of the stack trace holds the message logged, which may
 	# include newlines so we need to parse it separately.
 	my ( $first_caller ) = $stack_trace =~ /^(.*?at.*?line\s*\d*\n)/sx;
-	$stack_trace =~ s/\Q$first_caller\E//
-		if defined $first_caller;
+	$first_caller //= '';
+	$stack_trace =~ s/\Q$first_caller\E//;
 
 	push(
 		@$parsed_stack_trace,
