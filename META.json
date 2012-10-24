@@ -39,11 +39,11 @@
    "provides" : {
       "Carp::Parse" : {
          "file" : "lib/Carp/Parse.pm",
-         "version" : "v1.0.4"
+         "version" : "v1.0.6"
       },
       "Carp::Parse::CallerInformation" : {
          "file" : "lib/Carp/Parse/CallerInformation.pm",
-         "version" : "v1.0.4"
+         "version" : "v1.0.6"
       }
    },
    "release_status" : "stable",
@@ -59,5 +59,5 @@
          "url" : "https://github.com/katekirby/Carp-Parse.git"
       }
    },
-   "version" : "v1.0.4"
+   "version" : "v1.0.6"
 }

@@ -20,10 +20,10 @@ name: Carp-Parse
 provides:
   Carp::Parse:
     file: lib/Carp/Parse.pm
-    version: v1.0.4
+    version: v1.0.6
   Carp::Parse::CallerInformation:
     file: lib/Carp/Parse/CallerInformation.pm
-    version: v1.0.4
+    version: v1.0.6
 requires:
   Carp: 0
   Data::Dump: 0
@@ -33,4 +33,4 @@ resources:
   homepage: https://metacpan.org/release/Carp-Parse
   license: http://www.gnu.org/licenses/gpl-3.0.txt
   repository: https://github.com/katekirby/Carp-Parse.git
-version: v1.0.4
+version: v1.0.6
