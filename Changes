@@ -1,5 +1,8 @@
 Revision history for Carp-Parse
 
+1.0.7   11/15/2012
+        Requring Perl 5.10, because I use the // operator.
+		
 1.0.6   10/24/2012
         Things blow up if it can't find the line number; added a default of ''.
 

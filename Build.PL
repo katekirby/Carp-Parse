@@ -23,7 +23,7 @@ my $builder = Module::Build->new(
 	{
 		'Carp'            => 0,
 		'Data::Dump'      => 0,
-		'perl'            => 5.006,
+		'perl'            => 5.010,
 	},
 	add_to_cleanup       =>
 	[
